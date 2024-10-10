@@ -3,7 +3,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import ProfileDetails from "../pages/ProfileDetails";
 import Preview from "../pages/Preview";
-import Links from "../pages/links";
+import LinksPage from "../pages/LinksPage";
 
 const router = createBrowserRouter([
   {
@@ -11,24 +11,24 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
-        path: "links",
-        element: <Links />,
+        path: "/linkspage",
+        element: <LinksPage />,
       },
       {
-        path: "profile",
+        path: "/profile",
         element: <ProfileDetails />,
       },
       {
-        path: "preview",
+        path: "/preview",
         element: <Preview />,
       },
       {
         path: "/",
-        element: <Navigate to="/links" replace />,
+        element: <Navigate to="/linkspage" replace />,
       },
       {
         path: "*",
-        element: <Navigate to="/links" replace />,
+        element: <Navigate to="/linkspage" replace />,
       },
     ],
   },
