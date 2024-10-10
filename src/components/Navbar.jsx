@@ -91,11 +91,11 @@ const Navbar = () => {
         <NavLink
           to="/preview" // Assuming you have a route for /preview
           className={({ isActive }) =>
-            `cursor-pointer flex gap-2 montserrat list-none text-sm transform duration-500 ${
+            `cursor-pointer flex gap-2 montserrat list-none h-9 text-sm transform duration-500 ${
               isActive
                 ? "text-white bg-violet-600 "
-                : "text-violet-700 border border-violet-700 hover:bg-violet-200 relative inline-block overflow-hidden before:absolute before:inset-0 before:-z-10 before:block before:translate-x-[100%] before:rounded-s-none before:bg-violet-600 before:duration-200 after:absolute after:inset-0 after:-z-10 after:block after:-translate-x-[100%] after:rounded-e-none after:bg-violet-600 after:duration-500 hover:text-white before:hover:translate-x-0 after:hover:translate-x-0 "
-            } font-bold rounded-md px-4 h-9 flex items-center justify-center`
+                : "text-violet-700  border-violet-700 hover:bg-violet-200 relative inline-block overflow-hidden before:absolute before:inset-0 before:-z-10 before:block before:translate-x-[100%] before:rounded-s-none before:bg-violet-600 before:duration-200 after:absolute after:inset-0 after:-z-10 after:block after:-translate-x-[100%] after:rounded-e-none after:bg-violet-600 after:duration-500 hover:text-white before:hover:translate-x-0 after:hover:translate-x-0 "
+            } font-bold rounded-md border px-4 flex items-center justify-center`
           }
         >
           Preview

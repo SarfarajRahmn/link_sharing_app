@@ -1,6 +1,6 @@
 import React from "react";
-import CustomizeLink from "../components/CustomizeLink";
-import Phone from "../components/phone";
+import CustomizeLink from "../components/CustomizeLink.jsx";
+import Phone from "../components/Phone.jsx";
 
 const LinksPage = () => {
   return (
