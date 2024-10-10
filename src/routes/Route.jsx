@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
-        path: "/linkspage",
+        path: "/links",
         element: <LinksPage />,
       },
       {
@@ -24,11 +24,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/",
-        element: <Navigate to="/linkspage" replace />,
+        element: <Navigate to="/links" replace />,
       },
       {
         path: "*",
-        element: <Navigate to="/linkspage" replace />,
+        element: <Navigate to="/links" replace />,
       },
     ],
   },
