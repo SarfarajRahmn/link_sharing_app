@@ -34,12 +34,18 @@ const Navbar = () => {
     >
       {/* Logo */}
       <div className="flex-grow flex justify-between">
-        <div className="flex items-center justify-between gap-2 ">
-          <div className="bg-violet-700 rounded-md h-6 w-6 flex items-center justify-center">
-            <PiLinkBold className="text-white rotate-45" />
-          </div>
-          <h2 className="font-extrabold text-gray-700 montserrat">devlinks</h2>
-        </div>
+        <NavLink to={"/links"}>
+          {" "}
+          <div className="flex items-center justify-between gap-2 ">
+            {" "}
+            <div className="bg-violet-700 rounded-md h-6 w-6 flex items-center justify-center">
+              <PiLinkBold className="text-white rotate-45" />
+            </div>
+            <h2 className="font-extrabold text-gray-700 montserrat">
+              devlinks
+            </h2>
+          </div>{" "}
+        </NavLink>
 
         {/* Centered Links Section */}
         <ul
