@@ -1,7 +1,14 @@
 import React from "react";
+import CustomizeLink from "../components/CustomizeLink";
+import Phone from "../components/phone";
 
-const Links = () => {
-  return <div>Links</div>;
+const links = () => {
+  return (
+    <div className="flex justify-center items-center w-full">
+      <Phone />
+      <CustomizeLink />
+    </div>
+  );
 };
 
-export default Links;
+export default links;

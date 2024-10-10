@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import ProfileDetails from "../pages/ProfileDetails";
 import Preview from "../pages/Preview";
@@ -11,16 +11,24 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
-        path: "/",
+        path: "links",
         element: <Links />,
       },
       {
-        path: "/ProfileDetails",
+        path: "profile",
         element: <ProfileDetails />,
       },
       {
-        path: "/Preview",
+        path: "preview",
         element: <Preview />,
+      },
+      {
+        path: "/",
+        element: <Navigate to="/links" replace />,
+      },
+      {
+        path: "*",
+        element: <Navigate to="/links" replace />,
       },
     ],
   },
