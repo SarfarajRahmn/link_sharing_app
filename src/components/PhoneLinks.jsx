@@ -3,10 +3,10 @@ import phoneimg from "../assets/images/phone.png";
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { FaArrowRight, FaLinkedin } from "react-icons/fa";
 import { ImYoutube } from "react-icons/im";
-
+ 
 const ProfileLinks = () => {
   return (
-    <div className="bg-white w-[40%] flex justify-center items-center rounded-lg relative">
+    <div className="hidden lg:flex bg-white w-[40%] justify-center items-center rounded-lg relative">
       <div className="absolute bottom-[17rem] flex flex-col space-y-4">
         {/* GitHub Button */}
         <button className="flex justify-between items-center rounded-lg bg-gray-900 w-[12.7rem] px-4 h-10 text-sm text-white duration-300 active:scale-95">
@@ -36,7 +36,7 @@ const ProfileLinks = () => {
       </div>
       <img
         src={phoneimg}
-        alt=""
+        alt="Phone illustration"
         height={300}
         width={300}
         className="px-2 py-24"

@@ -2,18 +2,13 @@ import React, { useEffect, useState } from "react";
 import { PiLinkBold } from "react-icons/pi";
 import { FiLink } from "react-icons/fi";
 import { IoPersonCircleOutline } from "react-icons/io5";
-import { FaXmark, FaBars } from "react-icons/fa6";
 import { NavLink, useLocation } from "react-router-dom";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const location = useLocation();
   const isPreviewPage = location.pathname === "/preview";
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,12 +23,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={` flex items-center justify-between bg-white rounded-md px-4 py-3 transition-all duration-300 ${
-        isSticky ? "shadow-md" : ""
-      }`}
+      className={`fixed top-4 left-0 right-0 flex items-center justify-between bg-white rounded-md px-4 mx:4 lg:mx-7 py-3 shadow-md z-50`}
     >
       <div className="flex-grow flex justify-between items-center">
-        {/* Conditionally render logo or back button */}
         {isPreviewPage ? (
           <NavLink
             to="/editor"
@@ -42,34 +34,46 @@ const Navbar = () => {
             Back to Editor
           </NavLink>
         ) : (
-          <NavLink to={"/links"}>
-            <div className="flex items-center justify-between gap-2">
-              <div className="bg-violet-700 rounded-md h-6 w-6 flex items-center justify-center">
-                <PiLinkBold className="text-white rotate-45" />
+          <>
+            {/* desktop */}
+            <NavLink
+              to={"/links"}
+              className={`hidden lg:flex items-center gap-6 text-slate-900`}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <div className="bg-violet-700 rounded-md h-6 w-6 flex items-center justify-center">
+                  <PiLinkBold className="text-white rotate-45" />
+                </div>
+                <h2 className="font-extrabold text-gray-700 montserrat">
+                  devlinks
+                </h2>
               </div>
-              <h2 className="font-extrabold text-gray-700 montserrat">
-                devlinks
-              </h2>
-            </div>
-          </NavLink>
+            </NavLink>
+
+            {/* mobile */}
+            <NavLink
+              to={"/links"}
+              className={`lg:hidden flex items-center gap-6`}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <div className="bg-violet-700 rounded-lg h-8 w-8 flex items-center justify-center">
+                  <PiLinkBold className="text-white rotate-45 text-2xl" />
+                </div>
+              </div>
+            </NavLink>
+          </>
         )}
 
-        {/* Conditionally render the main links or nothing for preview */}
+        {/* Desktop view with text */}
         {!isPreviewPage && (
-          <ul
-            className={`flex items-center gap-6 text-slate-900 ${
-              isMenuOpen
-                ? "flex-col absolute bg-white shadow-md xs:w-full left-0 rounded-md z-10 mt-2"
-                : "hidden lg:flex"
-            }`}
-          >
+          <ul className={`hidden lg:flex items-center gap-6 text-slate-900`}>
             <li className="cursor-pointer font-semibold text-sm montserrat">
               <NavLink
                 to="/links"
                 className={({ isActive }) =>
                   `${
                     isActive
-                      ? " text-violet-700 bg-violet-100 rounded-md "
+                      ? "text-violet-700 bg-violet-100 rounded-md"
                       : "hover:border-violet-700 hover:border-b hover:text-violet-700"
                   } flex items-center justify-center gap-2 h-9 transform duration-500 px-5`
                 }
@@ -85,7 +89,7 @@ const Navbar = () => {
                   `${
                     isActive
                       ? "text-violet-700 bg-violet-100 rounded-md"
-                      : "hover:border-violet-700 hover:border-b hover:text-violet-700 "
+                      : "hover:border-violet-700 hover:border-b hover:text-violet-700"
                   } flex items-center justify-center gap-2 h-9 transform duration-500 px-5`
                 }
               >
@@ -96,63 +100,64 @@ const Navbar = () => {
           </ul>
         )}
 
-        {/* Conditionally render Preview/Share Link button */}
-        <NavLink
-          to="/preview"
-          className={({ isActive }) =>
-            `cursor-pointer gap-2 montserrat list-none h-9 text-sm transform duration-500 active:scale-95 ${
-              isActive
-                ? "text-white bg-violet-600 "
-                : "text-violet-700 border-violet-700 hover:bg-violet-200 relative inline-block overflow-hidden before:absolute before:inset-0 before:-z-10 before:block before:translate-x-[100%] before:rounded-s-none before:bg-violet-600 before:duration-200 after:absolute after:inset-0 after:-z-10 after:block after:-translate-x-[100%] after:rounded-e-none after:bg-violet-600 after:duration-500 hover:text-white before:hover:translate-x-0 after:hover:translate-x-0 "
-            } font-bold rounded-md border px-4 flex items-center justify-center`
-          }
-        >
-          {isPreviewPage ? "Share Link" : "Preview"}
-        </NavLink>
-      </div>
+        <div className={`hidden lg:flex items-center gap-6 text-slate-900`}>
+          <NavLink
+            to="/preview"
+            className={({ isActive }) =>
+              `cursor-pointer gap-2 montserrat list-none h-9 text-sm transform duration-500 active:scale-95 ${
+                isActive
+                  ? "text-white bg-violet-600"
+                  : "text-violet-700 border-violet-700 hover:bg-violet-200 relative inline-block overflow-hidden before:absolute before:inset-0 before:-z-10 before:block before:translate-x-[100%] before:rounded-s-none before:bg-violet-600 before:duration-200 after:absolute after:inset-0 after:-z-10 after:block after:-translate-x-[100%] after:rounded-e-none after:bg-violet-600 after:duration-500 hover:text-white before:hover:translate-x-0 after:hover:translate-x-0"
+              } font-bold rounded-md border px-4 flex items-center justify-center`
+            }
+          >
+            {isPreviewPage ? "Share Link" : "Preview"}
+          </NavLink>
+        </div>
 
-      {/* Mobile Menu Button */}
-      <div className="lg:hidden ">
-        <button onClick={toggleMenu} className="text-black focus:outline-none">
-          {isMenuOpen ? (
-            <FaXmark className="h-6 w-6" />
-          ) : (
-            <FaBars className="h-6 w-6" />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu Items */}
-      {!isPreviewPage && isMenuOpen && (
-        <div className="lg:hidden flex flex-col bg-white rounded-md shadow-md mt-2 w-16">
-          <li className="cursor-pointer font-semibold text-sm rounded-md montserrat px-5 py-2 transform duration-500 hover:bg-violet-100 hover:text-violet-700 flex items-center justify-center gap-2">
+        {/* Mobile view only shows icons */}
+        <ul className={`lg:hidden flex items-center gap-2`}>
+          <li className="cursor-pointer">
             <NavLink
               to="/links"
               className={({ isActive }) =>
                 `${
-                  isActive ? "active_bar noline" : "inactive_bar noline"
-                } flex items-center`
+                  isActive ? "bg-violet-100 text-violet-600 " : "text-gray-500"
+                } flex items-center h-10 w-16 font-semibold justify-center rounded-lg `
               }
             >
-              <FiLink />
-              Links
+              {isPreviewPage ? "" : <FiLink size={20} />}
             </NavLink>
           </li>
-          <li className="cursor-pointer font-semibold text-sm rounded-md montserrat px-5 py-2 transform duration-500 hover:bg-violet-100 hover:text-violet-700 flex items-center justify-center gap-2">
+          <li className="cursor-pointer">
             <NavLink
               to="/profile"
               className={({ isActive }) =>
                 `${
-                  isActive ? "active_bar noline" : "inactive_bar noline"
-                } flex items-center`
+                  isActive ? "bg-violet-100 text-violet-600 " : "text-gray-500"
+                } flex items-center h-10 w-16 font-semibold justify-center rounded-lg `
               }
             >
-              <IoPersonCircleOutline className="text-lg" />
-              Profile Details
+              {isPreviewPage ? "" : <IoPersonCircleOutline size={20} />}
             </NavLink>
           </li>
+        </ul>
+
+        <div className={`lg:hidden flex items-center gap-6`}>
+          <NavLink
+            to="/preview"
+            className={({ isActive }) =>
+              `cursor-pointer gap-2 montserrat list-none h-9 text-sm transform duration-500 active:scale-95 ${
+                isActive
+                  ? "text-white bg-violet-600"
+                  : "text-violet-700 border-violet-700 hover:bg-violet-200 relative inline-block overflow-hidden before:absolute before:inset-0 before:-z-10 before:block before:translate-x-[100%] before:rounded-s-none before:bg-violet-600 before:duration-200 after:absolute after:inset-0 after:-z-10 after:block after:-translate-x-[100%] after:rounded-e-none after:bg-violet-600 after:duration-500 hover:text-white before:hover:translate-x-0 after:hover:translate-x-0"
+              } font-bold rounded-md border px-3 flex items-center justify-center`
+            }
+          >
+            {isPreviewPage ? "Share Link" : <MdOutlineRemoveRedEye size={20}/>}
+          </NavLink>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

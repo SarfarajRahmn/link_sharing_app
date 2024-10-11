@@ -5,7 +5,7 @@ import ProfileDetailsComponent from "../components/ProfileDetailsComponent.jsx";
 
 const ProfileDetails = () => {
   return (
-    <div className="flex justify-center items-start w-full space-x-6">
+    <div className="flex justify-center items-start w-full lg:space-x-6">
       <PhoneProfileDetails />
       <ProfileDetailsComponent />
     </div>
