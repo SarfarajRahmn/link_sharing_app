@@ -30,7 +30,7 @@ const CustomizeLink = () => {
 
       <button
         onClick={addLinkSection}
-        className="relative h-9 w-full flex items-center justify-center px-4 font-bold text-xs hover:tracking-widest text-violet-700 border border-violet-700 rounded-md gap-2 montserrat transform duration-500 hover:bg-violet-600 hover:text-white"
+        className="relative h-9 w-full flex items-center justify-center px-4 font-bold text-xs hover:tracking-widest text-violet-700 border border-violet-700 rounded-md gap-2 montserrat transform duration-500 hover:bg-violet-600 hover:text-white active:scale-95"
       >
         <span className="text-lg font-semibold">+</span> Add New Link
       </button>
@@ -88,7 +88,7 @@ const CustomizeLink = () => {
       ))}
 
       <div className="border-t flex justify-end items-end lg:h-36">
-        <button className="text-sm rounded-lg w-20 h-9 bg-violet-700 active:scale-95 transform duration-300 ease-in-out text-white">
+        <button className="text-sm rounded-lg font-medium tracking-wider w-20 h-9 bg-violet-700 active:scale-95 transform duration-300 ease-in-out text-white">
           Save
         </button>
       </div>

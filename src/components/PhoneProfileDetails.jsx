@@ -1,14 +1,10 @@
 import React from "react";
 import phoneimg from "../assets/images/phone.png";
-import {
-  TbBrandGithubFilled,
-  TbBrandLinkedin,
-  TbBrandYoutube,
-} from "react-icons/tb";
+import { TbBrandGithubFilled } from "react-icons/tb";
 import { FaArrowRight, FaLinkedin } from "react-icons/fa";
 import { ImYoutube } from "react-icons/im";
 
-const Phone = () => {
+const ProfileProfileDetails = () => {
   return (
     <div className="bg-white w-[40%] flex justify-center items-center rounded-lg relative">
       <div className="absolute bottom-[17rem] flex flex-col space-y-4">
@@ -49,4 +45,4 @@ const Phone = () => {
   );
 };
 
-export default Phone;
+export default ProfileProfileDetails;

@@ -91,7 +91,7 @@ const Navbar = () => {
         <NavLink
           to="/preview" // Assuming you have a route for /preview
           className={({ isActive }) =>
-            `cursor-pointer flex gap-2 montserrat list-none h-9 text-sm transform duration-500 ${
+            `cursor-pointer gap-2 montserrat list-none h-9 text-sm transform duration-500 active:scale-95 ${
               isActive
                 ? "text-white bg-violet-600 "
                 : "text-violet-700  border-violet-700 hover:bg-violet-200 relative inline-block overflow-hidden before:absolute before:inset-0 before:-z-10 before:block before:translate-x-[100%] before:rounded-s-none before:bg-violet-600 before:duration-200 after:absolute after:inset-0 after:-z-10 after:block after:-translate-x-[100%] after:rounded-e-none after:bg-violet-600 after:duration-500 hover:text-white before:hover:translate-x-0 after:hover:translate-x-0 "
