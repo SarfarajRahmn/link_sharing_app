@@ -154,7 +154,7 @@ const Navbar = () => {
               } font-bold rounded-md border px-3 flex items-center justify-center`
             }
           >
-            {isPreviewPage ? "Share Link" : <MdOutlineRemoveRedEye size={20}/>}
+            {isPreviewPage ? "Share Link" : <MdOutlineRemoveRedEye size={20} />}
           </NavLink>
         </div>
       </div>

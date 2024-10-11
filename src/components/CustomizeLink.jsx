@@ -89,7 +89,7 @@ const CustomizeLink = () => {
         ))}
       </div>
 
-      <div className="border-t py-5 lg:px-10 px-4 flex justify-end items-end">
+      <div className="border-t py-5 lg:px-8 px-4 flex justify-end items-end">
         <button className="text-sm rounded-lg font-semibold tracking-wider w-full lg:w-20 h-9 bg-violet-700 active:scale-95 transform duration-300 ease-in-out text-white">
           Save
         </button>
