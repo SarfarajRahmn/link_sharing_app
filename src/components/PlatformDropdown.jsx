@@ -41,7 +41,7 @@ const PlatformDropdown = () => {
         </svg>
       </div>
 
-      {/* Dropdown options */}
+   
       <div
         className={`${
           isOpen ? "visible opacity-100" : "invisible opacity-0"

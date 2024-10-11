@@ -3,15 +3,12 @@ import PlatformDropdown from "./PlatformDropdown";
 import { FaLink } from "react-icons/fa";
 
 const CustomizeLink = () => {
-  // State to keep track of the link sections
   const [links, setLinks] = useState([{ id: 1 }, { id: 2 }]);
 
-  // Function to add a new link section
   const addLinkSection = () => {
     setLinks([...links, { id: links.length + 1 }]);
   };
 
-  // Function to remove a link section
   const removeLinkSection = (id) => {
     setLinks(links.filter((link) => link.id !== id));
   };

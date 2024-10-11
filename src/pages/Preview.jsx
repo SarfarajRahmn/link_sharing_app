@@ -10,7 +10,6 @@ const Preview = () => {
 
   return (
     <>
-      {" "}
       {/* Mobile view */}
       <ul className="lg:hidden flex w-full justify-center space-x-4">
         <li className="w-1/2">
@@ -30,6 +29,8 @@ const Preview = () => {
           </NavLink>
         </li>
       </ul>
+
+      
       <div className="flex justify-center">
         <div className="flex lg:max-w-[350px] flex-col items-center space-y-6 lg:space-y-4 rounded-3xl bg-white pt-16 lg:py-8 px-11 lg:shadow-lg ">
           <div className="p-1 rounded-full border-4 border-violet-600">
@@ -48,7 +49,6 @@ const Preview = () => {
           </div>
           <div className="flex w-full flex-col space-y-4 pt-6 py-2">
             {" "}
-            {/* GitHub Button */}
             <button className="flex justify-between items-center rounded-lg bg-gray-900 w-[12.7rem] px-4 h-10 text-sm text-white duration-300 active:scale-95">
               <span className="flex items-center justify-center gap-2">
                 <TbBrandGithubFilled />
@@ -56,14 +56,13 @@ const Preview = () => {
               </span>
               <FaArrowRight />
             </button>
-            {/* YouTube Button */}
             <button className="flex justify-between items-center rounded-lg bg-red-600 w-[12.7rem] px-4 h-10 text-sm text-white duration-300 active:scale-95">
               <span className="flex items-center justify-center gap-2">
                 <ImYoutube /> YouTube
               </span>
               <FaArrowRight />
             </button>
-            {/* LinkedIn Button */}
+     
             <button className="flex justify-between items-center rounded-lg bg-blue-600 w-[12.7rem] px-4 h-10 text-sm text-white duration-300 active:scale-95">
               <span className="flex items-center justify-center gap-2">
                 <FaLinkedin />

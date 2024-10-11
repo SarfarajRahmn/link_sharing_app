@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FaLink } from "react-icons/fa";
 import personImg from "../assets/images/person.jpg";
 import { IoImageOutline } from "react-icons/io5";
 import { PiFloppyDiskBackDuotone } from "react-icons/pi";
@@ -8,7 +7,6 @@ const ProfileDetailsComponent = () => {
   const [image, setImage] = useState(personImg);
   const [showToast, setShowToast] = useState(false);
 
-  // Function to handle file selection
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -37,7 +35,6 @@ const ProfileDetailsComponent = () => {
             Profile Picture
           </p>
 
-          {/* Image */}
           <div className="space-y-3 lg:w-[65%] flex flex-col lg:flex-row justify-start items-center gap-6">
             <div className="h-48 w-48 relative overflow-hidden rounded-xl group">
               <img
@@ -54,7 +51,6 @@ const ProfileDetailsComponent = () => {
                 <p className="text-white font-semibold text-sm">Change Image</p>
               </div>
 
-              {/* Hidden */}
               <input
                 type="file"
                 id="file-input"
@@ -70,7 +66,6 @@ const ProfileDetailsComponent = () => {
             </p>
           </div>
 
-          {/* Toast */}
           <div
             className={`fixed bottom-4 left-1/2 transform -translate-x-1/2 px-8 py-3 rounded-lg flex items-center space-x-2 shadow-md text-white transition-all duration-500 ${
               showToast

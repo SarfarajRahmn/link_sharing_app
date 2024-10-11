@@ -64,7 +64,7 @@ const Navbar = () => {
           </>
         )}
 
-        {/* Desktop view with text */}
+        {/* Desktop */}
         {!isPreviewPage && (
           <ul className={`hidden lg:flex items-center gap-6 text-slate-900`}>
             <li className="cursor-pointer font-semibold text-sm montserrat">
@@ -115,7 +115,7 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        {/* Mobile view only shows icons */}
+        {/* Mobile icons */}
         <ul className={`lg:hidden flex items-center gap-2`}>
           <li className="cursor-pointer">
             <NavLink
