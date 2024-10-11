@@ -36,7 +36,7 @@ const ProfileLinks = () => {
         alt="Phone illustration"
         height={300}
         width={300}
-        className="px-2 py-20 lg:h-[45rem]"
+        className="px-2 py-20 lg:h-[45rem] transition duration-300"
       />
     </div>
   );
