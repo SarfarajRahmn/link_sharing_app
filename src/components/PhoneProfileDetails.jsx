@@ -1,5 +1,5 @@
 import React from "react";
-import phoneimg from "../assets/images/phone.png";
+import phoneimg from "../assets/images/phone2.png";
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { FaArrowRight, FaLinkedin } from "react-icons/fa";
 import { ImYoutube } from "react-icons/im";

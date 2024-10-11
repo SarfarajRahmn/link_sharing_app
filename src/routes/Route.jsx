@@ -4,6 +4,7 @@ import MainLayout from "../layouts/MainLayout";
 import ProfileDetails from "../pages/ProfileDetails";
 import Preview from "../pages/Preview";
 import LinksPage from "../pages/LinksPage";
+import PreviewLayout from "../layouts/PreviewLayout"
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,16 @@ const router = createBrowserRouter([
       {
         path: "*",
         element: <Navigate to="/links" replace />,
+      },
+    ],
+  },
+  {
+    path: "/preview",
+    element: <PreviewLayout />,
+    children: [
+      {
+        path: "/preview",
+        element: <Preview />,
       },
     ],
   },

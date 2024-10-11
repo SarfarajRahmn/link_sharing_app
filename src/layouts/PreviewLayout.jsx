@@ -2,12 +2,12 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
-const MainLayout = () => {
+const PreviewLayout = () => {
   return (
-    <div className="flex justify-center items-center bg-gray-50 h-full lg:pt-6 pt-2">
-      <div className="min-w-[96%]">
+    <div className="lg:pt-6 pt-2 bg-gradient-to-b from-violet-500 to-blue-500 h-[50vh] rounded-b-3xl">
+      <div className="w-full px-2 lg:px-6 ">
         <Navbar />
-        <div className="py-5">
+        <div className="py-24 flex justify-center">
           <main className="">
             <Outlet />
           </main>
@@ -17,4 +17,4 @@ const MainLayout = () => {
   );
 };
 
-export default MainLayout;
+export default PreviewLayout;
