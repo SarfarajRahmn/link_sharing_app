@@ -4,7 +4,7 @@ import Phone from "../components/Phone.jsx";
 
 const LinksPage = () => {
   return (
-    <div className="flex justify-center items-center w-full">
+    <div className="flex justify-center items-start w-full space-x-6">
       <Phone />
       <CustomizeLink />
     </div>
